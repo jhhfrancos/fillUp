@@ -73,10 +73,13 @@ public class GasLog {
     private static final String VEHICLE_ID = "_id";
     private static final String VEHICLE_NAME = "name";
     private static final String VEHICLE_TANK_SIZE="tanksize";
+	private static final String VEHICLE_BRAND = "brand";
+	private static final String VEHICLE_PLATE = "plate";
+	private static final String VEHICLE_TYPE = "type";
 
     /// array of all column names for VEHICLES_TABLE 
     private static final String[] VEHICLES_TABLE_COLUMNS = 
-    		new String[] {VEHICLE_ID, VEHICLE_NAME, VEHICLE_TANK_SIZE};
+    		new String[] {VEHICLE_ID, VEHICLE_NAME, VEHICLE_TANK_SIZE, VEHICLE_BRAND, VEHICLE_PLATE, VEHICLE_TYPE};
     
     /// array of all column names for RECORDS_TABLE 
     private static final String[] RECORDS_TABLE_COLUMNS = new String[] {
@@ -96,7 +99,10 @@ public class GasLog {
     	"create table " + VEHICLES_TABLE + " ( " + 
     			VEHICLE_ID          + " integer primary key autoincrement, " + 
     			VEHICLE_NAME        + " text not null unique, " + 
-    			VEHICLE_TANK_SIZE   + " real not null); ",
+    			VEHICLE_TANK_SIZE   + " real not null " +
+				VEHICLE_BRAND		+ "text not null" +
+				VEHICLE_PLATE		+ "text not null" +
+				VEHICLE_TYPE		+ "text not null);",
 
 		"create table " + RECORDS_TABLE + " ( " + 
     			RECORD_ID           + " integer primary key autoincrement, " + 
@@ -237,6 +243,9 @@ public class GasLog {
     	values.put(VEHICLE_ID, vehicle.getID());
     	values.put(VEHICLE_NAME, vehicle.getName());
     	values.put(VEHICLE_TANK_SIZE, vehicle.getTankSize());
+		values.put(VEHICLE_BRAND, vehicle.getBrand());
+		values.put(VEHICLE_PLATE, vehicle.getPlate());
+		values.put(VEHICLE_TYPE, vehicle.getType());
     	return values;
     }
     
@@ -295,9 +304,15 @@ public class GasLog {
     		int id = c.getInt(c.getColumnIndex(VEHICLE_ID));
     		String name = c.getString(c.getColumnIndex(VEHICLE_NAME));
     		float tanksize = c.getFloat(c.getColumnIndex(VEHICLE_TANK_SIZE));
+			String brand = c.getString(c.getColumnIndex(VEHICLE_BRAND));
+			String plate = c.getString(c.getColumnIndex(VEHICLE_PLATE));
+			String type = c.getString(c.getColumnIndex(VEHICLE_TYPE));
     		vehicle.setID(id);
     		vehicle.setName(name);
     		vehicle.setTankSize(tanksize);
+			vehicle.setBrand(brand);
+			vehicle.setPlate(plate);
+			vehicle.setType(type);
     	}
     	return vehicle;
     }

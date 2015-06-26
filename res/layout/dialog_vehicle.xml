@@ -40,8 +40,35 @@
             android:inputType="numberDecimal"
             android:digits="0123456789.,"
             />
-        
-	</LinearLayout>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_brand_label"
+                android:id="@+id/labelVehicleBrand"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVehicleBrand"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_plate_label"
+                android:id="@+id/labelVehiclePlate"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVehiclePlate"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_type_label"
+                android:id="@+id/labelVehicleType"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textVehicleType"/>
+
+    </LinearLayout>
 	
 	<LinearLayout 
 	    android:layout_width="fill_parent" 

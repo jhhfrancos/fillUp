@@ -246,5 +246,13 @@
     <string name="res_update_html">assets/update.html</string>
     <string name="asset_stats_top_html">stats_top.html</string>
     <string name="asset_stats_bottom_html">stats_bottom.html</string>
+
+    <!-- my Strings -->
+    <string name="vehicle_brand_label">Vehicle brand</string>
+    <string name="vehicle_plate_label">Vehicle registration plate</string>
+    <string name="vehicle_type_label">Vehicle Type</string>
+    <string name="toast_invalid_vehicle_brand">Invalid vehicle brand name.</string>
+    <string name="toast_invalid_vehicle_plate">Invalid vehicle type name.</string>
+    <string name="toast_invalid_vehicle_type">Invalid vehicle type.</string>
     
 </resources>
